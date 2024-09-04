@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+  font-family: futura-bold;
+}
+.section1 .navbar{
+    background-color:#b6252f;
+    margin-bottom: 5px;
+  }
+  .section1 .navbar .collapse .navbar-nav .nav-item a{
+  color: #fff;
+  font-size: 17px;
+  padding-left: 17px;
+  transition: 2s;
+  }
+  .section1 .navbar .collapse .navbar-nav .nav-item a:hover{
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+  }
+  .section1 .navbar .collapse .btn-outline-success{
+    color: #febd69;
+    border: 2px solid #febd69;
+  }
+  .section1 .navbar .collapse .btn-outline-success:hover{
+    color: #b6252f;
+    border: 2px solid #b6252f;
+    background-color: #febd69;
+  }
+  /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+  .section2 .row .col-10 .form-inline .form-control {
+    display: block;
+    width: 80%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    /* border-radius: .25rem; */
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.sectiona{
+  /* background-image: url("../images/backgroud.png"); */
+  
+}
+.sectiona .myrow1{
+  /* background-color: #fff; */
+}
+.sectiona .myrow1 .col-md-4 .myrow2{
+  margin: 10px;
+}
+.sectiona .myrow1 .col-md-4 .myrow3{
+  margin: 10px;
+}
+.sectiona .myrow1 .col-md-4 .myrow2 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
+/* section product a */
+.sectiona .myrow1 .col-md-4 .myrow3 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+.sectiona .myrow1 .mydataone h2{
+  text-align: center;
+}
+.sectiona .myrow1 .mybannerone img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+  width: 100%;
+  height: 320px;
+}
+.sectiona .myrow1 .subsection3 h2{
+  text-align: center;
+}
+/* product owl */
+.mainproduct .owl-carousel .item:hover{
+  box-shadow: 5px 10px 15px black;
+}
+.mainproduct .owl-carousel .item .card{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.mainproduct .owl-carousel .item .card img{
+  transition: transform 1.5s;
+}
+.mainproduct .owl-carousel .item .card img:hover{
+  transform: scale(1.5);
+}
+
+
+.footer{
+  
+  background-color:#b6252f;
+}
+
+.myfooter #footer .socialsection .social-links .fa-instagram{
+  color: #e84393;
+ background-color: #fff;
+  margin: 2px;
+  padding: 5px;
+
+  transition: all 2s;
+}
+.myfooter #footer .socialsection .social-links .fa-instagram:hover{
+  transform: scale(2);
+}
+.myfooter #footer .socialsection .social-links .fa-youtube{
+  color: #e84118;
+  margin: 2px;
+  background-color: #fff;
+  padding: 5px;
+
+  transition: all 2s;
+}
+.myfooter #footer .socialsection .social-links .fa-youtube:hover{
+  transform: scale(2);
+}
+.myfooter #footer .socialsection .social-links .fa-facebook{
+  background-color: #fff;
+  padding: 5px;
+  margin: 2px;
+
+  transition: all 2s;
+  
+}
+.myfooter #footer .socialsection .social-links .fa-facebook:hover{
+  transform: scale(2);
+}
+.myfooter #footer .socialsection .social-links .fa-linkedin{
+  background-color: #fff;
+  margin: 2px;
+  padding: 5px;
+
+  transition: all 2s;
+}
+.myfooter #footer .socialsection .social-links .fa-linkedin:hover{
+  transform: scale(2);
+}
+.myfooter #footer .socialsection .social-links .fa-twitter{
+  background-color: #fff;
+  margin: 2px;
+  padding: 5px;
+
+  transition: all 2s;
+}
+.myfooter #footer .socialsection .social-links .fa-twitter:hover{
+  transform: scale(2);
+}
+
+.sectionalpha .row .col-md-6 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+}
+/* trending products  */
+.mainproduct .owl-carousel .item{
+  background-color: cyan;
+
+
+}
+.mainproduct .owl-carousel .item .card .card-body {
+  padding: 5px;
+  
+}
+/*  */
+.mainproduct .owl-carousel .item .card .card-body .card-title{
+  margin: 0;
+  padding-top: 5px;
+  font-size: 15px;
+  text-align:left;
+  
+}
+.mainproduct .owl-carousel .item a .card .card-body .card-title .spanone{
+  color: black;
+  font-weight: 500;
+  padding: 3px;
+  
+}
+
+/* got card commimg */
+.sectioncommingsoon .row .col-12 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* senta run */
+.setamov {
+overflow: hidden;
+}
+.setamov .mysentarun .senta1{
+  position: relative;
+}
+.setamov .mysentarun #sentaji{
+left: 100%;
+animation: fly 5s infinite;
+}
+
+@keyframes fly{
+  0%{
+    left: 100%;
+  }
+  25%{}
+  75%{}
+  100%{
+    left: -120px;
+  }
+}
+/* whatsapp */
+.sectionwhatsapp{
+  display: inline-block;
+ 
+  width: 100px;
+  height: 100px;
+  position: fixed;;
+  right: 8px;
+  bottom: 10px;
+  z-index: 11111111111;
+}
+.sectionwhatsapp img{
+  box-shadow: 2px 5px 8px black;
+  
+}
+/* gift aaya */
+.giftaagya .row .col-md-12 img{
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+  height: 250px;
+  width: 250px;
+}
+/* whatsapp button */
+.sectionwhatsapp{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: fixed;;
+  right: 8px;
+  bottom: 10px;
+  z-index: 11111111111;
+}
+.sectionwhatsapp img{
+  box-shadow: 2px 5px 8px black;
+  border-radius: 40px;
+}
+/* 11111111111111111111111111111111111111 enquiry pulse */
+.centerwala .pulsewala{
+  width: 50px;
+  height: 50px;
+  background: #ffd800;
+  position:fixed;
+  left: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  
+  font-family: Verdana;
+  animation: myanimatedataone 3s linear infinite;
+  z-index: 11111111111111111111111111;
+ 
+}
+@keyframes myanimatedataone {
+  0%{
+    box-shadow: 0 0 0 0 rgba(255,255,0,.7), 0 0 0 0 rgba(255,255,0,.7);  
+  }
+  40%{
+      box-shadow: 0 0 0 50px rgba(255,109,74,0), 0 0 0 0 rgba(255,255,0, 0.7);  
+  }
+  80%{
+      box-shadow: 0 0 0 50px rgba(255,109,74,0), 0 0 0 30px rgba(255,109,74,0);  
+  }
+  100%{
+      box-shadow: 0 0 0 0 rgba(255,109,74,0), 0 0 0 30px rgba(255,109,74,0);  
+  }
+}
+/* whatsapp */
+.centerwalatwo .pulsewalatwo{
+  width: 52px;
+  height: 52px;
+  /* background: green; */
+  position:fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 100px;
+  font-family: Verdana;
+  animation: myanimatedata 3s linear infinite;
+  z-index: 11111111111111111111111111;
+  }
+
+  @keyframes myanimatedata {
+  0%{
+    box-shadow: 0 0 0 0 rgba(0,255,74,.7), 0 0 0 0 rgba(0,255,74,.7);  
+  }
+  40%{
+      box-shadow: 0 0 0 50px rgba(255,109,74,0), 0 0 0 0 rgba(0,255,0,.7);  
+  }
+  80%{
+      box-shadow: 0 0 0 50px rgba(255,109,74,0), 0 0 0 30px rgba(255,109,74,0);  
+  }
+  100%{
+      box-shadow: 0 0 0 0 rgba(255,109,74,0), 0 0 0 30px rgba(255,109,74,0);  
+  }
+  }
+
+
+      .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+        /* background: none; */
+        /* color: inherit; */
+        /* border: none; */
+        /* padding: 0 !important; */
+        /* font: inherit; */
+    }

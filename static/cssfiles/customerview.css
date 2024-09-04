@@ -1,0 +1,15 @@
+.productsall .container-fluid .row{
+    margin-bottom: 20px;
+}
+.productsall .container-fluid .row .col-md-2 .card{
+    overflow: hidden;
+}
+.productsall .container-fluid .row .col-md-2 .card:hover{
+box-shadow: 5px 10px 15px black;
+}
+.productsall .container-fluid .row .col-md-2 .card img{
+    transition: transform 1.5s;
+}
+.productsall .container-fluid .row .col-md-2 .card img:hover{
+    transform: scale(1.5);
+}
