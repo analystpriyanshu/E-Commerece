@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    edit profile
+    <form action="/edit_profile" method="post">
+        {% csrf_token %}
+        <input type="text" name="firstname" id="myid1" placeholder="firstname" value="{{profile.first_name}}" required> <br>
+        <input type="text" name="lastname" id="myid2" placeholder="lastname" value="{{profile.last_name}}" required> <br>
+        <input type="text" name="username" id="myid3" placeholder="username" value="{{profile.username}}" required> <br>
+        <input type="email" name="email" id="myid4" placeholder="email" value="{{profile.email}}" required>   <br>
+        <input type="number" name="phone" id="myid7" placeholder="phone" value="{{profile.phone_no}}" required>  <br>
+        <input type="number" name="altnum" id="myid8" placeholder="phone" value="{{profile.alt_no}}" required>  <br>
+        <textarea name="address" id="myid9" cols="30" rows="10" required>{{profile.address}}</textarea>
+        <input type="submit" value="save changers">
+    </form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load custom_filter %}
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<body>
+
+
+  <div class="container">
+    <div class="border rounded p-4 m-4">
+      <p class="display-4 pl-4 ml-4">Order History</p>
+      <hr>
+      <section class="maindata container">
+        {% for i in mcart %}
+        <div class="media" style="background-color: aqua;box-shadow: 2px 5px 10px black;">
+          <img src="{{i.product_ki_img.url}}" class="mr-3 img-fluid" alt="..." style="width: 100px;">
+          <div class="media-body">
+            <h5 class="mt-0" style="text-transform: capitalize;">{{i.product_ka_name}}</h5>
+            <p> product Id- {{i.Product_ki_id}} <br> Quantity - {{i.Product_ki_quantity}} <br> Price -
+              {{i.Product_ki_quantity|multiply:i.product_ki_price}} <br> Order Date - {{i.add_on}} </p>
+            {% if i.status %}
+            <h6> Status - Delivered</h6>
+            {% else %}
+            <h6> Status - Pending</h6>
+            {% endif %}
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
+
+      </section>
+
+    </div>
+    <!-- section2 -->
+   
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

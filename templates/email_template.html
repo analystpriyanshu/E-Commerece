@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load cart %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>{{title}}</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+</head>
+<body>
+    <h2> Hi! {{profile.first_name}}</h2>
+    <p>We are prepping your bag of joy,Containing the products You picked. Once We've shipped your order,you'll get an update</p>
+    <p>Wr Know you can't wait to get your hands on it,so have've begun prepping for it right away.</p>
+    <p>Stay stylish!</p>
+    <p>Gopalji Accessories</p>
+    <hr>
+    <h1 style="background-color: aqua;">Your Order Details</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Quantity</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Product Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{content.prod_name}}</th>
+            <td>{{ Product_ki_quantity}}</td>
+            <td>{{content.prod_price}}</td>
+            <td>{{content.id}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    <hr>
+    <h2 style="background-color: aqua;">contact us For Any Query</h2>
+    <p></p>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

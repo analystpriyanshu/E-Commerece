@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopalji</title>
+    {% load static %}
+    {% load cart %}
+    <link rel="stylesheet" href="{% static 'cssfiles/mainpage.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/customerview.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.theme.green.css' %}">
+    <!-- js -->
+    <script src="{% static 'jsfiles/jquery.min.js' %}"></script>
+    <script src="{% static 'jsfiles/owl.carousel.min.js' %}"></script>
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+
+<body>
+    <!-- section logo -->
+
+    <!-- menubar -->
+    <section class="section1 container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-5">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'indexpage' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    All Catogeries
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for i in allcategories %}
+                    <a class="dropdown-item" href="{% url 'productsearch' %}?qry={{i.id}}" style="color: black;">{{i.Category_name}}</a>
+                    {% endfor %}
+                  </div>
+                </li>
+                <!-- customer details -->
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Welcome1 {{profile.username}} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item active">
+      
+                  <a class="nav-link" href="#">Welcome Guest <span class="sr-only">(current)</span></a>
+                </li>
+      
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+            
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'signup' %}">Create Account</a>
+                </li>
+                {% endif %}
+               
+              </ul>
+              <form action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="qry" type="search" placeholder="Search" aria-label="Search"
+                  id="search">
+                <button class="btn btn-outline-success m-2 my-sm-0 " type="Submit">Search</button>
+              </form>
+      
+            </div>
+           
+            
+            <a class="navbar-brand" href="{% url 'mycart' %}">
+              <i class="fa fa-cart-plus fa-1x" style="color: #fff;" aria-hidden="true">Cart<span
+                class="badge badge-info">{{request.session.cart.keys|length}}</span></i>
+      
+            </a>
+          </nav>
+       </section>
+
+    <!-- products -->
+    <section class="productsall">
+        <div class="container-fluid">
+            <div class="row">
+                {% for i in myproducts %}
+                <div class="col-md-2 col-6">
+                    <a href="productview/{{i.id}}">
+                        <div class="card">
+                            <img src="{{i.prod_img.url}}" class="card-img-top" style="height: 250px;" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{i.prod_name|truncatechars:35}}</h5>
+                                <p class="card-text"><span class="spanone"
+                                        style="color: black;font-weight:500; padding: 3px;text-decoration: none;">₹{{i.prod_price}}</span>
+                                    <span class="span2"
+                                        style="color: red;font-weight:300; padding: 3px;text-decoration: none;"><strike>Rs
+                                            {{i.prod_price}} </strike> </span></p>
+                                <a href="productview/{{i.id}}" class="btn "style="display: block;background-color:#b6252f; color:white ">view</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- aaaaaaa -->
+    <section class="footer myfooter">
+      <br>
+      <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <div class="mypic">
+                            <!-- <img src="images/mee2.png" alt="" srcset=""> -->
+                        </div>
+                        <h4 class="text-white">THE Eccomerce</h4>
+                        <p class="text-white" style="font-size: 15px;">
+                         
+                            <strong class="text-white">WhatsApp:</strong> +91-8800931204<br>
+                            <strong class="text-white">Phone:</strong> +91-8800931204<br>
+                            <strong class="text-white">Email:</strong> raghavsahil885@gmail.com
+
+                            <br>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4 class="text-white">Our Policy</h4>
+                        <ul style="color: #fff;">
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #ffffff;" href="index.html"> Terms and conditions </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #ffffff;" href="ourideology.html"> Refund and Cancellation </a>
+                                      
+                            </li>       
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #ffffff;" href="patron.html"> Privacy  </a>
+                                    
+
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h6 class="text-white"></h6>
+                        <img src="images/hindhSwabhiman.jfif"
+                            style="display: block;margin-left:auto;margin-right:auto;" class="img-fluid" alt="">
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.4598568264014!2d77.4439503144577!3d28.67588758886954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bd99915b61%3A0x323df50844e2c20f!2sDurga%20Chamber%2C%20Sector%2015%2C%20Sector%2010%2C%20Raj%20Nagar%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201002!5e0!3m2!1sen!2sin!4v1630321501982!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-md-flex py-4 socialsection">
+                <!-- <div class="mr-md-auto text-center text-md-left">
+  <div class="copyright text-white" style="font-size: 10px;">
+    &copy; Copyright <strong><span>company</span></strong>All Rights Reserved
+  </div>
+  <div class="credits text-white">
+    Designed & Developed by <a href="https://www.instagram.com/akshay_agg_boxer/">Agranshu (Slanzapanika)</a>
+  </div>
+ 
+</div> -->
+                <div class="social-links text-center text-md-right pt-3 px-1 pt-md-0 "
+                    style="display: block; margin-left: auto;margin-right: auto;">
+                    <a href=""> <i class="fa fa-facebook  fa-3x" aria-hidden="true"></i> </a>
+                    <!-- <a href=""> <i class="fa fa-youtube fa-3x" aria-hidden="true"></i></a> -->
+                    <a href=""><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+                    <a href=""> <i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div style="background-color: #fff;">
+                <div class="container" style="text-align: center;">
+                    <div class="copyright " style="font-size: 10px;color:black">
+                        &copy; Copyright <strong><span>thehutprinting</span></strong> All Rights Reserved to
+                        Eccomerce
+                    </div>
+                    <div class="credits text-white" style="font-size: 10px;">
+
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

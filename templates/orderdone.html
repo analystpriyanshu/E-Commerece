@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cssfiles/lstdone.css' %}">
+</head>
+<body onload="myFunction()">
+    <div class="popup center"> 
+        <div class="icon">
+            <i class="fa fa-check"></i>
+        </div>
+        <div class="title">
+           Order Placed successfully!!
+        </div>
+        <div class="description">
+           Your Order conformed.Please check your email for detail.For any query u can call at +91-8587901095 or mail us at gopaljiaccessories@gmail.com
+        </div>
+        <div class="dismiss-btn">
+            
+            <a href="{% url 'indexpage' %}" class="btn w-100 mt-1">Ok</a>
+        </div>
+    </div>
+    <!--  -->
+    
+<script>
+   function myFunction(){
+    document.getElementsByClassName("popup")[0].classList.add("active");
+   }
+        
+   
+    document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
+        document.getElementsByClassName("popup")[0].classList.remove("active");
+    });
+</script>
+</body>
+</html>

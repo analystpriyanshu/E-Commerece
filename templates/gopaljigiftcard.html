@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Gopalji</title>
+    {% load static %}
+   
+    <link rel="stylesheet" href="{% static 'cssfiles/mainpage.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.theme.green.css' %}">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+           box-sizing: border-box;
+        }
+        body{
+           
+           background-image: url('../static/images/giftback.jpg');
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-attachment: fixed;
+           height: 100vh;
+           width: 100%;
+        }
+    
+      .card{ 
+          margin-top: 20px;
+          margin-right: auto;
+          margin-left: auto;
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            transform-style: preserve-3d;
+            transform: perspective(2000px);
+            transition: 1s;
+            box-shadow: inset 300px 0 50px rgba(0,0,0,.5);
+            
+        }
+
+        .card:hover{
+            z-index: 1000;
+            transform: perspective(2000px) rotate(-10deg);
+            box-shadow: inset 20px 0 50px rgba(0,0,0,.5);
+        }
+       .card .imgbox{
+           position: relative;
+           width: 100%;
+           height: 100%;
+           border: 1px solid #000;
+           box-sizing: border-box;
+           transform-origin: left;
+           z-index: 1;
+           transition: 1s;
+
+        }
+        .card .imgbox img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card:hover .imgbox{
+            transform: rotatey(-135deg);
+        }
+        .card .detaild{
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .hedingset{
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            color: brown;
+        }
+        .aboutset{
+            text-transform: uppercase;
+            text-align: center;
+            color: brown;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- card start -->
+    <div class="container">
+<div class="card">
+        <div class="imgbox">
+            <img src="../static/images/hoho.jpg" alt="" srcset="" >
+        </div>
+        <div class="detaild">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{myproducts.prod_img.url}}" class="d-block w-100" style="height: 200px;" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{myproducts.prod_img.url}}" class="d-block w-100" style="height: 200px;" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{myproducts.prod_img.url}}" class="d-block w-100" style="height: 200px;" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+              <br>
+              <h5 class="card-title">{{myproducts.prod_name}}</h5>
+              <p class="card-text"><span class="spanone"
+                  style="color: green;font-weight:800; padding: 3px;text-decoration: none;">₹{{myproducts.prod_price}}</span>
+                <span class="span2" style="color: red;font-weight:800; padding: 3px;text-decoration: none;"><strike>Rs
+                    {{myproducts.prod_mrp}} </strike> </span></p>
+                    <br>
+              <a href="productview/{{myproducts.id}}" class="btn "
+              style="display: block;background-color:#b6252f; color:white">view</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
